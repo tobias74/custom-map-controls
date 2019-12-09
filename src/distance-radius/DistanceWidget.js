@@ -49,6 +49,10 @@ export class DistanceWidget extends google.maps.MVCObject {
     this.radiusWidget && this.radiusWidget.disableMe();
   }
 
+  isRadiusEnabled() {
+    return this.radiusWidget.isEnabled();
+  }
+
   distance_changed() {
     this.options.onNewSearchRadius(this.get('position'), Math.round(this.get('distance')));
   }

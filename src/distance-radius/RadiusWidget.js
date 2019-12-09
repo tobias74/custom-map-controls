@@ -20,7 +20,12 @@ export class RadiusWidget extends google.maps.MVCObject {
     });
   }
 
+  isEnabled() {
+    return this._isEnabled;
+  }
+
   enableMe() {
+    this._isEnabled = true;
     this.bindTo('bounds', this.circle);
     this.circle.bindTo('center', this);
     this.circle.bindTo('map', this);
@@ -29,6 +34,7 @@ export class RadiusWidget extends google.maps.MVCObject {
   }
 
   disableMe() {
+    this._isEnabled = false;
     this.unbindAll();
     this.disableSizer();
     this.circle.unbindAll();
