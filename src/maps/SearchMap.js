@@ -37,6 +37,8 @@ export class SearchMap {
       },
     });
 
+    this.createPlaceSearchInput();
+
     this.addEventListeners();
 
   }
@@ -48,6 +50,7 @@ export class SearchMap {
   }
 
   createPlaceSearchInput() {
+    console.log('this my searchbox', this.placeSearchInput);
     var searchBox = new google.maps.places.SearchBox(this.placeSearchInput);
 
     searchBox.addListener('places_changed', () => {
