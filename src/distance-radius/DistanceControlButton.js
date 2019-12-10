@@ -38,7 +38,7 @@ export class DistanceControlButton extends MapsControlButton {
       } else {
         this.enableRadius();
       }
-      this.options.onToggleControlButton(this.distanceWidget.isRadiusEnabled());
+      this.options.onToggleDistanceControlButton(this.distanceWidget.isRadiusEnabled());
     });
   }
 
