@@ -4,8 +4,29 @@ import { DistanceWidget } from './DistanceWidget.js';
 export class DistanceControlButton extends MapsControlButton {
 
 
-  getImageIcon() {
-    return 'url(//maps.gstatic.com/tactile/mylocation/mylocation-sprite-1x.png)';
+
+  getIconStyles() {
+    return {
+      ...super.getIconStyles(),
+      "backgroundImage": 'url(//icon-library.net/images/distance-icon/distance-icon-24.jpg)',
+      "backgroundSize": "30px 30px",
+      "width": "30px",
+      "height": "30px",
+
+    };
+  }
+
+  getButtonStyles() {
+    return {
+      ...super.getButtonStyles(),
+      "width": "40px",
+      "height": "40px",
+    };
+  }
+
+
+  getTitle() {
+    return "Show Radius";
   }
 
   afterButtonWasCreated() {
@@ -28,7 +49,6 @@ export class DistanceControlButton extends MapsControlButton {
   }
 
   enableRadius() {
-    console.log('inside enableRadius');
     this.distanceWidget.enableRadius();
   }
 
